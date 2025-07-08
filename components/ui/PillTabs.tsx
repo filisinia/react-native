@@ -1,7 +1,7 @@
+import FlexBox from "@/components/FlexBox";
+import PillButton, { PillItemType } from "@/components/PillButton";
 import React from "react";
 import { ScrollView } from "react-native";
-import FlexBox from "../FlexBox";
-import PillButton, { PillItemType } from "../PillButton";
 
 const categories: PillItemType[] = [
   { label: "Pinned", emoji: "📌" },

@@ -1,6 +1,6 @@
+import Typography from "@/components/Typography";
 import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
-import Typography from "./Typography";
 
 export type PillItemType = {
   emoji?: string;
@@ -15,7 +15,7 @@ type Props = {
 const PillButton = ({ item, onClick }: Props) => {
   return (
     <TouchableOpacity style={styles.pill} onPress={() => onClick?.(item)}>
-      <Typography>
+      <Typography type="small">
         {item.emoji} {item.label}
       </Typography>
     </TouchableOpacity>
@@ -31,6 +31,5 @@ const styles = StyleSheet.create({
     borderRadius: 24,
     paddingHorizontal: 16,
     paddingVertical: 8,
-    backgroundColor: "#111",
   },
 });

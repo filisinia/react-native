@@ -1,10 +1,11 @@
+import FlexBox from "@/components/FlexBox";
+import SearchButton from "@/components/SearchButton";
+import SearchInput from "@/components/SearchInput";
+import PillTabs from "@/components/ui/PillTabs";
 import { Link } from "expo-router";
 import React from "react";
 import Icon from "react-native-vector-icons/Ionicons";
-import FlexBox from "../FlexBox";
-import SearchButton from "../SearchButton";
-import SearchInput from "../SearchInput";
-import PillTabs from "./PillTabs";
+import SearchHistory from "./SearchHistory";
 
 const SearchLocationTopBar = () => {
   return (
@@ -18,15 +19,16 @@ const SearchLocationTopBar = () => {
         direction="row"
         justifyContent="space-between"
         gap={5}
-        height={34}
+        height={40}
       >
         <Link href="/">
-          <Icon name="chevron-back-outline" color="#fff" size={30} />
+          <Icon name="chevron-back-outline" color="#fff" size={24} />
         </Link>
         <SearchInput placeholder="Search location" />
         <SearchButton />
       </FlexBox>
       <PillTabs />
+      <SearchHistory />
     </FlexBox>
   );
 };
