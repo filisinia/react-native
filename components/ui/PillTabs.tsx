@@ -4,12 +4,12 @@ import React from "react";
 import { ScrollView } from "react-native";
 
 const categories: PillItemType[] = [
-  { label: "Pinned", emoji: "📌" },
-  { label: "Near me", emoji: "📍" },
-  { label: "Hotels", emoji: "🏨" },
-  { label: "Restaurants", emoji: "🍜" },
-  { label: "Category", emoji: "✨" },
-  { label: "Category 2", emoji: "👙" },
+  { label: "📌 Pinned" },
+  { label: "📍 Near me" },
+  { label: "🏨 Hotels" },
+  { label: "🍜 Restaurants" },
+  { label: "✨ Category" },
+  { label: "👙 Category 2" },
 ];
 
 type Props = {
@@ -23,7 +23,7 @@ const PillTabs = ({ onChange }: Props) => {
 
   return (
     <ScrollView horizontal showsHorizontalScrollIndicator={false}>
-      <FlexBox height="auto" gap={7}>
+      <FlexBox height="auto" gap={7} style={{ paddingHorizontal: 16 }}>
         {categories.map((item, index) => (
           <PillButton key={index} item={item} onClick={handleOnClick} />
         ))}

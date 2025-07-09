@@ -16,7 +16,9 @@ const SearchHistoryItem = ({ title, onClick, onDelete }: Props) => {
       <FlexBox justifyContent="space-between">
         <FlexBox gap={13} width="auto">
           <Icon name="history" size={24} color="#fff" />
-          <Typography type="defaultSemiBold">{title}</Typography>
+          <Typography type="default" fontWeight="600">
+            {title}
+          </Typography>
         </FlexBox>
         <TouchableOpacity onPress={() => onDelete?.(title)}>
           <Icon name="close" size={24} color="#5E5E5E" />

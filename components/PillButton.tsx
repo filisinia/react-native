@@ -3,7 +3,6 @@ import React from "react";
 import { StyleSheet, TouchableOpacity } from "react-native";
 
 export type PillItemType = {
-  emoji?: string;
   label?: string;
 };
 
@@ -15,8 +14,8 @@ type Props = {
 const PillButton = ({ item, onClick }: Props) => {
   return (
     <TouchableOpacity style={styles.pill} onPress={() => onClick?.(item)}>
-      <Typography type="small">
-        {item.emoji} {item.label}
+      <Typography type="small" fontWeight="600">
+        {item.label}
       </Typography>
     </TouchableOpacity>
   );

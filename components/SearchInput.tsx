@@ -30,6 +30,7 @@ export default SearchInput;
 const style = StyleSheet.create({
   textInput: {
     color: "#fff",
+    fontSize: 15,
     height: "100%",
     flex: 1,
     borderColor: "#000",

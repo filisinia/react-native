@@ -1,4 +1,4 @@
-import { StyleSheet, Text, type TextProps } from "react-native";
+import { StyleSheet, Text, TextStyle, type TextProps } from "react-native";
 
 import { useThemeColor } from "@/hooks/useThemeColor";
 import React from "react";
@@ -6,20 +6,16 @@ import React from "react";
 export type TypographyProps = TextProps & {
   lightColor?: string;
   darkColor?: string;
-  type?:
-    | "default"
-    | "title"
-    | "defaultSemiBold"
-    | "subtitle"
-    | "link"
-    | "small";
+  type?: "default" | "title" | "subtitle" | "link" | "small";
+  fontWeight?: TextStyle["fontWeight"];
 };
 
 function Typography({
   style,
-  lightColor,
-  darkColor,
+  lightColor = "#fff",
+  darkColor = "#fff",
   type = "default",
+  fontWeight = "normal",
   ...rest
 }: TypographyProps) {
   const color = useThemeColor({ light: lightColor, dark: darkColor }, "text");
@@ -27,10 +23,9 @@ function Typography({
   return (
     <Text
       style={[
-        { color },
+        { color, fontWeight },
         type === "default" ? styles.default : undefined,
         type === "title" ? styles.title : undefined,
-        type === "defaultSemiBold" ? styles.defaultSemiBold : undefined,
         type === "subtitle" ? styles.subtitle : undefined,
         type === "link" ? styles.link : undefined,
         type === "small" ? styles.small : undefined,
@@ -48,24 +43,16 @@ const styles = StyleSheet.create({
     fontSize: 16,
     lineHeight: 24,
   },
-  defaultSemiBold: {
-    fontSize: 16,
-    lineHeight: 24,
-    fontWeight: "600",
-  },
   title: {
     fontSize: 32,
-    fontWeight: "bold",
     lineHeight: 32,
   },
   subtitle: {
     fontSize: 20,
-    fontWeight: "bold",
   },
   link: {
     lineHeight: 30,
     fontSize: 16,
-    color: "#0a7ea4",
   },
   small: {
     fontSize: 14,

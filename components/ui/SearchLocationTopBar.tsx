@@ -20,6 +20,7 @@ const SearchLocationTopBar = () => {
         justifyContent="space-between"
         gap={5}
         height={40}
+        style={{ paddingHorizontal: 16 }}
       >
         <Link href="/">
           <Icon name="chevron-back-outline" color="#fff" size={24} />
